@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{%block title %}
+  About Page
+{% endblock %}
+
+{% block content %}
+<h1>About Page</h1>
+<p>Django Learning Project</p>
+
+<p>
+<!-- {{my_context}} -->
+{{my_text}} , {{my_number}}
+{{my_list}}
+</p>
+
+<ul>
+  {% for my_sub_item in my_list %}
+    {% if my_sub_item == 20 %}
+      <li>{{forloop.counter}}. {{my_sub_item|add:20}}</li>
+    {% elif my_sub_item == 'abc' %}
+      <li>Oops found abc</li>
+    {% else %}
+      <li>{{forloop.counter}}. {{my_sub_item}}</li>
+    {% endif %}
+
+  {% endfor %}
+</ul>
+
+
+
+{% endblock %}
