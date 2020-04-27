@@ -18,7 +18,8 @@ def about_view(request, *args , **kwargs):
         "my_text" : "this is my text",
         "this_is_true" : True,
         "my_number" : 99,
-        "my_list" : [10,20,30,40, "abc"]
+        "my_list" : [10,20,30,40, "abc"],
+        "my_html" : "<h1> Passing html sring using safe template filter</h1>"
     }
     return render (request, "about.html", my_context)
 

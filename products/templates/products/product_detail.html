@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{%block title %}
+  Product Detail Page
+{% endblock %}
+
+{% block content %}
+<h1>In app template: {{ object.title }}</h1>
+<p>{%if object.description%} {{object.description}} {% else %} Not Available {% endif %}</p>
+<p>{%if object.price%}{{object.price}}{%else%} Not Available {% endif %}</p>
+<p>{%if object.summary%}{{object.summary}}{%else%} Not Available {% endif %}</p>
+{% endblock %}
