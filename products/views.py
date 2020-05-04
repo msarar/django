@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product
-from .forms import ProductForm, RawProductForm
+from .forms import ProductForm #, RawProductForm
 # Create your views here.
 
 def product_create_view(request, *args , **kwargs):
     initial_data = {
-        'title' : "initial title"
+        'title' : "X"
     }
     form = ProductForm (request.POST or None, initial = initial_data)
     if form.is_valid():
@@ -15,6 +15,16 @@ def product_create_view(request, *args , **kwargs):
         "form" : form
     }
     return render (request, "products/product_create.html", context)
+
+def product_update_view(request, id=id):
+    obj = get_object_or_404(Product, id=id)
+    form = ProductForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request, "products/product_create.html", context)
 
 def dynamic_lookup_view(request, my_id):
     # obj = Product.objects.get(id =my_id)

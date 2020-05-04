@@ -37,17 +37,17 @@ class ProductForm (forms.ModelForm):
 
 
 
-class RawProductForm (forms.Form):
-    title = forms.CharField(label = '', widget = forms.TextInput(attrs ={"placeholder": "Your Title"}))  #textfield not possible; charfield
-    description = forms.CharField(
-                        required = False,
-                        widget = forms.Textarea(
-                            attrs = {
-                                "placeholder": "Your Desc",
-                                "class": "new-class_name two",
-                                "id": "my-id-for-textarea",
-                                "rows" : 20,
-                                "colums": 100
-                            }
-                        ))
-    price = forms.DecimalField(initial = 50)
+# class RawProductForm (forms.Form):
+    # title = forms.CharField(label = '', widget = forms.TextInput(attrs ={"placeholder": "Your Title"}))  #textfield not possible; charfield
+    # description = forms.CharField(
+    #                     required = False,
+    #                     widget = forms.Textarea(
+    #                         attrs = {
+    #                             "placeholder": "Your Desc",
+    #                             "class": "new-class_name two",
+    #                             "id": "my-id-for-textarea",
+    #                             "rows" : 20,
+    #                             "colums": 100
+    #                         }
+    #                     ))
+    # price = forms.DecimalField(initial = 50)

@@ -6,7 +6,7 @@
 
 {% block content %}
  {% for instance in object_list%}
-    <p>{{instance.id}} - {{instance.title}} <a href="./{{instance.id}}" > Details</a></p>
+    <p>{{instance.id}} -  <a href="{{instance.get_absolute_url}}" > {{instance.title}}</a> <a href="{{instance.get_absolute_update_url}}" > Update </a> <a href="{{instance.get_absolute_delete_url}}" > Delete </a></p>
  {% endfor %}
 
 {% endblock %}
